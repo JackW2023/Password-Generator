@@ -33,6 +33,11 @@ function generatePassword() {
         attempt = reattempt;
     }
     
+    // Confirming Criteria
+    var uppercasein = confirm ("Do you want to include Uppercase?");
+    var lowercasein = confirm ("Do you want to include lowercase?");
+    var specialcharactersin = confirm ("Do you want to include special characters?");
+    var numbersin = confirm = ("Do you want to include numbers?");
 }
 
 

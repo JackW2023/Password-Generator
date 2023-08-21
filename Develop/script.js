@@ -5,7 +5,6 @@ var specialcharacters = [ '@','%','+','\\','/',"'",'!','#','$','^','?',':',',','
 var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 
 
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -19,6 +18,9 @@ function writePassword() {
 }
 
 function generatePassword() {
+    // Declaring Password is equal to an empty string
+    var password = [];
+
 
     // Checking for the length
     var attempt = 0 
@@ -29,10 +31,28 @@ function generatePassword() {
             alert("Please Enter a valid length")
             var length = parseInt(prompt("Please states the password length, it could only be between 8-128 characters"))
         }
-        reattempt = 1;
+        reattempt = 1
         attempt = reattempt;
     }
     
+    // Confirming Criteria
+    var uppercasein = confirm ("Do you want to include Uppercase?");
+    var lowercasein = confirm ("Do you want to include lowercase?");
+    var specialcharactersin = confirm ("Do you want to include special characters?");
+    var numbersin = confirm ("Do you want to include numbers?");
+
+    while (!uppercasein && !lowercasein && !specialcharactersin && !numbersin) {
+        if(!attempt == 0) {
+            alert("You must choice at less one character type")
+            var uppercasein = confirm ("Do you want to include Uppercase?")
+            var lowercasein = confirm ("Do you want to include lowercase?")
+            var specialcharactersin = confirm ("Do you want to include special characters?")
+            var numbersin = confirm ("Do you want to include numbers?")
+        }
+        reattempt = 1
+        attempt = reattempt;
+    }
+
 }
 
 

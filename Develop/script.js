@@ -26,6 +26,7 @@ function generatePassword() {
     var attempt = 0 
     var length = parseInt(prompt("Please states the password length, it could only be between 8-128 characters"));
 
+    // This while loop re-prompt the user incase if they made a mistake
     while (isNaN(length) || length < 8 || length > 128) {
         if(!attempt == 0) {
             alert("Please Enter a valid length")
@@ -36,11 +37,14 @@ function generatePassword() {
     }
     
     // Confirming Criteria
+    var acceptedchar = [];
+
     var uppercasein = confirm ("Do you want to include Uppercase?");
     var lowercasein = confirm ("Do you want to include lowercase?");
     var specialcharactersin = confirm ("Do you want to include special characters?");
     var numbersin = confirm ("Do you want to include numbers?");
 
+    // while loop for re-prompting users us they made a mistake
     while (!uppercasein && !lowercasein && !specialcharactersin && !numbersin) {
         if(!attempt == 0) {
             alert("You must choice at less one character type")
@@ -52,6 +56,26 @@ function generatePassword() {
         reattempt = 1
         attempt = reattempt;
     }
+
+    // Adding confirm elements to acceptedchar's array
+    if (uppercasein) {
+        acceptedchar = [...acceptedchar, ...uppercasedcharacters]
+        // checking Array formation
+        console.log(acceptedchar);
+      }
+    if (lowercasein) {
+        acceptedchar = [...acceptedchar, ...lowercasedcharacters]
+        console.log(acceptedchar);
+      }
+    if (specialcharactersin) {
+        acceptedchar = [...acceptedchar, ...specialcharacters]
+        console.log(acceptedchar);
+    }
+    if (numbersin) {
+        acceptedchar = [...acceptedchar, ...numbers]
+        console.log(acceptedchar);
+    }
+    
 
 }
 

@@ -13,6 +13,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  // appending the password to the passwordtext box
   passwordText.value = password;
 
 }
@@ -76,6 +77,28 @@ function generatePassword() {
         console.log(acceptedchar);
     }
     
+    // Putting all the elements together
+    for (i = 0; i < length; i++) {
+        // declaring the length of the password
+        // Math.floor = turning decimals into whole numbers
+        // Math.random() = generating random number with giving parameters
+        // accpetedchar.length is define the length of the selectable array
+        // Thus Math.random()*acceptedchar.length generate random index from the in the given array
+        // the length of the index is pre-declare
+        var selectedindex = Math.floor(Math.random()*acceptedchar.length);
+        // checking the formation function if it's executed properly 
+        console.log(selectedindex);
+        // Pick out the character base on the random selected index
+        var selectchar = acceptedchar[selectedindex];
+        // checking the if theres any error
+        console.log(selectchar);
+
+        // adding this to the right side of password or concatenated
+        // if += is use for number it will add the numbers 
+        password += selectchar;
+
+    }
+    return password
 
 }
 

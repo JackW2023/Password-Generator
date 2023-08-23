@@ -98,6 +98,8 @@ function generatePassword() {
         password += selectchar;
 
     }
+
+    // Returning the generated password back to variable password  
     return password
 
 }
